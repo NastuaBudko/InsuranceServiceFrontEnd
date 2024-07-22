@@ -1,0 +1,54 @@
+<form [formGroup]="form" (ngSubmit)="onSubmitted()">
+    <h2>Sign up</h2>
+    <div class="form_container">
+        <div class="input-forms">
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" formControlName="email">
+            </div>
+
+            <div>
+                <label for="name">Name</label>
+                <input id="name" formControlName="name">
+            </div>
+
+            <div>
+                <label for="lastName">Last name</label>
+                <input id="lastName" formControlName="lastName">
+            </div>
+
+            <div>
+                <label for="middleName">Middle name</label>
+                <input id="middleName" formControlName="middleName">
+            </div>
+        </div>
+
+        <div class="input-forms">
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" formControlName="password">
+            </div>
+
+            <div>
+                <label for="phoneNumber">Phone number</label>
+                <input type="tel" id="phoneNumber" formControlName="phoneNumber"  >
+            </div>
+
+            <div>
+                <label for="branch">Select a branch where you work</label>
+                <select id="branch" formControlName="branch">
+                    @for(branch of branches(); track branch._id) {
+                    <option [value]="branch._id">{{branch.branchName}}: {{branch.branch}} - {{branch.adress}}
+                    </option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <button>Submit</button>
+
+    @if(formIsInvalid) {
+    <p class="control-error">Enter a valid registration data</p>
+    }
+</form>
