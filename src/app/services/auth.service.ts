@@ -25,7 +25,7 @@ export class AuthService {
   }
 
   register(userData: IUser) {
-    const url = 'http://localhost:5555/auth/register'
+    const url = 'https://insurance-service-backend.onrender.com/auth/register'
     return this.httpClient.post(url, userData).pipe(
       tap((data: any) => {
         this.setAuthToken(data.token);
@@ -39,7 +39,7 @@ export class AuthService {
   }
 
   login(data: { email: string, password: string }) {
-    const url = 'http://localhost:5555/auth/login'
+    const url = 'https://insurance-service-backend.onrender.com/auth/login'
     return this.httpClient.post(url, data).pipe(
       tap((data: any) => {
         this.setAuthToken(data.token);
@@ -54,7 +54,7 @@ export class AuthService {
 
   getMe() {
     const token = localStorage.getItem('token')
-    const url = 'http://localhost:5555/auth/me'
+    const url = 'https://insurance-service-backend.onrender.com/auth/me'
 
     if (!token) {
       console.error('No token found. User is not authenticated.');

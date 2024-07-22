@@ -11,7 +11,7 @@ export class InsuranceTypesService {
     private httpClient = inject(HttpClient)
 
 getAllTypes() {
-  const url = 'http://localhost:5555/insurance-types'
+  const url = 'https://insurance-service-backend.onrender.com/insurance-types'
   return this.httpClient.get<IType[]>(url).pipe(
     catchError((error: HttpErrorResponse) => {
       console.log(error)

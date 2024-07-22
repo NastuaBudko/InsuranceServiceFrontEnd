@@ -11,7 +11,7 @@ export class BranchesService {
     private httpClient = inject(HttpClient)
 
 getAllBranches() {
-  const url = 'http://localhost:5555/branches'
+  const url = 'https://insurance-service-backend.onrender.com/branches'
   return this.httpClient.get<IBranch[]>(url).pipe(
     catchError((error: HttpErrorResponse) => {
       console.log(error)
