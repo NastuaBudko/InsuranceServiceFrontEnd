@@ -1,0 +1,19 @@
+@if(isAddingInsurance()) {
+    <app-new-insurance (close)="onCloseCreatingInsurance()"/>
+}
+
+<button (click)="onAddInsurance()" class="secondary_button"> Add insurance </button>
+
+@if(isLoading()) {
+    <img class="loading-icon" src="loading-icon.png" alt="loading-icon">
+}
+
+<ul>
+    @for(insurance of insurances(); track insurance) {
+        <li><app-insurance [insurance]="insurance" (insuranceRemoved)="onRemove()"/></li>
+    }
+</ul>
+
+@if(insurances().length === 0 && !isLoading()) {
+    <p>No available insurances yet</p>
+}

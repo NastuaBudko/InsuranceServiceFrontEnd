@@ -1,0 +1,49 @@
+.card-container {
+    width: 100%;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0px 2px 8px 0px rgba(44, 49, 63, 0.10);
+}
+
+img {
+    height: 94px;
+}
+
+p {
+    color: var(--border-color);
+    margin: 0;
+    font-size: 14px;
+}
+
+.info {
+    margin: 16px 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+} 
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.secondary_button {
+    width: 40px;
+}
+
+.more-info-button {
+    flex-grow: 1;
+}
+
+.delete-icon {
+    width: 20px;
+    height: 20px;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

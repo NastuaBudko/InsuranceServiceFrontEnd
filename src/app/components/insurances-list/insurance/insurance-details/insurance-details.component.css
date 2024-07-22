@@ -1,0 +1,145 @@
+.insurance-details-container {
+    margin-top: 32px;
+    width: 100%;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 4px 4px 20px 0px rgba(44, 49, 63, 0.10);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.icon-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 94px;
+}
+
+p {
+    margin: 0;
+}
+
+.general-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.general-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.detaitls-items-container {
+    gap:40px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.details-item-logo-container {
+    width: 40px;
+    height: 40px;
+    background-color: var(--button-main-color);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-item-block {
+    display: flex;
+    gap: 16px;
+}
+
+.details-item-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.details-item-name {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.title-text {
+    color: var(--main-text-color);
+    font-weight: bold;
+}
+
+.info-text {
+    color: var(--border-color);
+    font-weight: 500;
+}
+
+button {
+    background-color: var(--secondary-button-color);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+button:hover {
+    box-shadow: 0px 2px 8px 0px rgba(248, 133, 113, 0.50);
+  }
+
+.icon {
+    width: 18px;
+    height: 18px;
+}
+
+.number-container {
+    display: flex;
+    gap: 8px;
+}
+
+.return-icon {
+    height: 14px;
+    width: 14px;
+    margin: 0;
+}
+
+@media(min-width: 556px) {
+    .icon-container {
+        width: 220px;
+    }
+
+    .detaitls-items-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .general-info-container {
+        flex-direction: row;
+    }
+    
+    button {
+        width: 188px;
+        margin-left: auto;
+    }
+
+    .number-container {
+        flex-direction: column;
+    }
+}
+
+@media(min-width: 830px) {
+    .number-container {
+        flex-direction: row;
+    }
+}
+
+@media(min-width: 1112px) {
+    .detaitls-items-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
