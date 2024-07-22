@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
 
-# Insurance Service Frontend
+## Description
 
 This project is the frontend part of the Insurance Service application. It is built using Angular and TypeScript to manage and display insurance policies, user authentication, and other related functionalities.
 
