@@ -12,7 +12,7 @@ export class InsurancesService {
 
   loadInsurances() {
     return this.fetchInsurances(
-      'http://localhost:5555/insurances',
+      'https://insurance-service-backend.onrender.com/insurances',
       'Something went wrong loading insurances. Please try again later'
     )
   }
@@ -27,7 +27,7 @@ export class InsurancesService {
   }
 
   addInsurance(insuranceData: IInsurance) {
-    const url = 'http://localhost:5555/insurances';
+    const url = 'https://insurance-service-backend.onrender.com/insurances';
     const token = localStorage.getItem('token');
     if (!token) {
       console.error('No token found. User is not authenticated.');
@@ -49,7 +49,7 @@ export class InsurancesService {
 
 
   removeInsurance(insurance: IInsuranceForServer) {
-    const url = `http://localhost:5555/insurances/${insurance._id}`;
+    const url = `https://insurance-service-backend.onrender.com/${insurance._id}`;
     const token = localStorage.getItem('token');
     if (!token) {
       console.error('User is not authenticated.');
@@ -65,7 +65,7 @@ export class InsurancesService {
   }
 
   getInsurance(id: string) {
-    const url = `http://localhost:5555/insurances/${id}`;
+    const url = `https://insurance-service-backend.onrender.com/insurances/${id}`;
     const token = localStorage.getItem('token');
     if (!token) {
       console.error('User is not authenticated.');
