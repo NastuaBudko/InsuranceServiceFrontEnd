@@ -2,17 +2,72 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
 
-## Development server
+# Insurance Service Frontend
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This project is the frontend part of the Insurance Service application. It is built using Angular and TypeScript to manage and display insurance policies, user authentication, and other related functionalities.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- User authentication (login, register)
+- Managing and displaying insurance policies
+- Integration with backend APIs
+- Counting user's salary
+- Dynamic forms for creating and updating insurance policies
+- Responsive design
 
-## Build
+## Live Demo
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Check out the live demo of the [Project](https://insurance-service.onrender.com).
+
+## API Documentation
+
+For detailed information about the API endpoints, refer to the [Swagger documentation](https://insurance-service-backend.onrender.com/api-docs/).
+
+## Getting Started
+
+Follow these instructions to set up the project locally.
+
+### Preparement
+
+Make sure you have Node.js and npm installed on your machine. You can download them from [Node.js](https://nodejs.org/).
+
+### Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/your-username/your-repo.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd your-repo
+    ```
+
+3. Install the dependencies:
+
+    ```bash
+    npm install
+    ```
+
+### Running the Application
+
+1. Start the development server:
+
+    ```bash
+    ng serve
+    ```
+
+2. Open your browser and navigate to `http://localhost:4200`.
+
+### Building for Production
+
+To build the application for production, run:
+
+```bash
+ng build --prod
+```
 
 ## Running unit tests
 
