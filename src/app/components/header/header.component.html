@@ -1,0 +1,32 @@
+<header>
+    <div class="header-container">
+        <div class="logo" routerLink="">
+            <img src="logo.png">
+            <h1>Insurance service</h1>
+        </div>
+
+        @if(authService.AuthToken) {
+        <div class="account">
+            <button routerLink="profile">
+                <img class="account-icon" src="profile-icon.png" alt="Sign in">
+                <p class="account-text">My account</p>
+            </button>
+            <button class="secondary_button" (click)="onSignOut()">
+                <img class="account-icon" src="log-out-icon.png" alt="Sign up">
+                <p class="account-text">Log out</p>
+            </button>
+        </div>
+        } @else {
+        <div class="account">
+            <button routerLink="sign-in" class="secondary_button">
+                <img class="account-icon" src="sign-in-icon.png" alt="Sign in">
+                <p class="account-text">Sign in</p>
+            </button>
+            <button routerLink="sign-up">
+                <img class="account-icon" src="sign-up-icon.png" alt="Sign up">
+                <p class="account-text">Sign up</p>
+            </button>
+        </div> }
+    </div>
+
+</header>

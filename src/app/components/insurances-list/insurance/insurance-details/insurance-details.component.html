@@ -1,0 +1,83 @@
+<button routerLink="">
+    <img class="return-icon" src="return-icon.png">
+    Back to list</button>
+<div class="insurance-details-container">
+    <div class="general-info-container">
+        <div class="icon-container">
+            <img [src]="IconPath">
+        </div>
+
+        <div class="general-info-text">
+            <div class="number-container">
+                <h2 class="title-text">Insurance number: </h2>
+                <p class="info-text">{{insurance()?._id?.slice(-6)}}</p>
+            </div>
+            <p class="info-text">More details about insurance</p>
+        </div>
+    </div>
+
+    <div class="detaitls-items-container">
+        <div class="details-item-block">
+            <div class="details-item-logo-container">
+                <img class="icon" src="branch-icon.png" alt="branch icon">
+            </div>
+            <div class="details-item-wrapper">
+                <p class="title-text">Insurance branch: </p>
+                <div class="details-item-name">
+                    <p class="info-text">{{insurance()?.branch?.branchName}}:</p>
+                    <p class="info-text">{{insurance()?.branch?.branch}} - {{insurance()?.branch?.adress}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="details-item-block">
+            <div class="details-item-logo-container">
+                <img class="icon" src="amount-icon.png" alt="insurance amount icon">
+            </div>
+            <div class="details-item-wrapper">
+                <p class="title-text">Insurance amount:</p>
+                <p class="info-text">{{insurance()?.insuranceSum | currency: '$'}}</p>
+            </div>
+        </div>
+
+        <div class="details-item-block">
+            <div class="details-item-logo-container">
+                <img class="icon" src="tariff-rate-icon.png" alt="tariff rate icon">
+            </div>
+            <div class="details-item-wrapper">
+                <p class="title-text">Tariff rate:</p>
+                <p class="info-text">{{insurance()?.tariffRate}}%</p>
+            </div>
+        </div>
+
+        <div class="details-item-block">
+            <div class="details-item-logo-container">
+                <img class="icon" src="insurance-rate-icon.png" alt="insurance rate icon">
+            </div>
+            <div class="details-item-wrapper">
+                <p class="title-text">Insurance rate:</p>
+                <p class="info-text">{{insuranceRate | currency}}</p>
+            </div>
+        </div>
+
+        <div class="details-item-block">
+            <div class="details-item-logo-container">
+                <img class="icon" src="type-icon.png" alt="insurance type icon">
+            </div>
+            <div class="details-item-wrapper">
+                <p class="title-text">Insurance type:</p>
+                <p class="info-text">{{insurance()?.insuranceType?.name}}</p>
+            </div>
+        </div>
+
+        <div class="details-item-block">
+            <div class="details-item-logo-container">
+                <img class="icon" src="date-icon.png" alt="date of creation icon">
+            </div>
+            <div class="details-item-wrapper">
+                <p class="title-text">Created at:</p>
+                <p class="info-text">{{insurance()?.createdAt | date: 'medium'}}</p>
+            </div>
+        </div>
+    </div>
+</div>

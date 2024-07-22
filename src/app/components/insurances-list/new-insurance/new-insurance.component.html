@@ -1,0 +1,43 @@
+<div class="backdrop" (click)="onCancel()"></div>
+<dialog open>
+    <h2>Add new insurance</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmitted()">
+
+        <div class="input-forms">
+            <div>
+                <label>Select insurance type: </label>
+                <select formControlName="typeId">
+                    @for(type of insuranceTypes(); track type._id) {
+                    <option [value]="type._id">{{type.name}} - {{type.type}}</option>
+                    }
+                </select>
+            </div>
+
+            <div>
+                <label>Insurance amount (from 10 000 to 2 000 000): </label>
+                <input type="number" min="10000" max="2000000" formControlName="amount">
+            </div>
+
+            <div>
+                <label>Tariff rate (from 0.1 to 10): </label>
+                <input type="number" min="0.1" max="10" step="0.1" formControlName="rate">
+            </div>
+
+            <div>
+                <label>Branch where the contract was concluded: </label>
+                <select formControlName="branchId">
+                    @for(branch of branches(); track branch._id) {
+                    <option [value]="branch._id">{{branch.branchName}}: {{branch.branch}} - {{branch.adress}}</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="actions">
+            <button type="button" class="secondary_button" (click)="onCancel()">Cancel</button>
+            <button type="submit">Submit</button>
+        </div>
+        @if(formIsInvalid) {
+            <p class="control-error">Enter a valid insurance data</p>
+            }
+    </form>
+</dialog>
