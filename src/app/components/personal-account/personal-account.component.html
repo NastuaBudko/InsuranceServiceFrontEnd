@@ -1,0 +1,37 @@
+<h2>Personal account</h2>
+<div class="line"></div>
+<h2>{{user()?.lastName | capitalize}} {{user()?.name | capitalize}} {{user()?.middleName | capitalize}}</h2>
+
+<div class="account-container">
+
+    <div class="info">
+        <div class="info-card">
+            <p><strong>Branch where i work:</strong></p>
+            <p class="info-text">{{user()?.branch?.branchName}} - {{user()?.branch?.branch}} -
+                {{user()?.branch?.adress}} </p>
+        </div>
+        <div class="info-card">
+            <p><strong>Branch phone number:</strong></p>
+            <p class="info-text">{{user()?.branch?.phoneNumber}}</p>
+        </div>
+        <div class="info-card">
+            <p><strong>My email: </strong> </p>
+            <p class="info-text">{{user()?.email}}</p>
+        </div>
+    </div>
+
+    <div class="salary-info-container">
+        <h3>Salary</h3>
+        <div class="salary-line"></div>
+        <div class="salary-info">
+            <div class="salary-info-text">
+                <p class="info-title">The amount of insurance {{user()?.name}} has made today:</p>
+                <p class="info-text">{{user()?.insuranceCount}}</p>
+            </div>
+            <div class="salary-info-text">
+                <p class="info-title">Your current salary:</p>
+                <p class="info-text">{{user()?.salary | currency: '$'}}</p>
+            </div>
+        </div>
+    </div>
+</div>
