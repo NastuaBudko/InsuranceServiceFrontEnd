@@ -17,7 +17,7 @@ This project is the frontend part of the Insurance Service application. It is bu
 
 ## Live Demo
 
-Check out the live demo of the [Project](https://insurance-service.onrender.com).
+Check out the live demo of the [Project](https://insurance-service-frontend.onrender.com).
 
 ## API Documentation
 
@@ -26,6 +26,15 @@ For detailed information about the API endpoints, refer to the [Swagger document
 ## Getting Started
 
 Follow these instructions to set up the project locally.
+
+## Project Structure
+
+- `src/app`: Contains the main application code.
+- `src/app/components`: Reusable components.
+- `src/app/services`: Services for API calls and data management.
+- `src/app/models`: Data models and interfaces.
+- `src/app/modules`: Feature modules.
+
 
 ### Preparement
 
