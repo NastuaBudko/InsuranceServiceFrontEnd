@@ -1,0 +1,19 @@
+form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 24px;
+    width: 100%;
+    max-width: 380px;
+    border-radius: 16px;
+    box-shadow: 4px 4px 20px 0px rgba(44, 49, 63, 0.10);
+    justify-self: center;
+    align-self: center;
+}
+
+@media(min-width: 556px) {
+    form {
+        width: 400px;
+        max-width: 400px;
+    }
+}
