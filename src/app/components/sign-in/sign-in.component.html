@@ -3,11 +3,11 @@
     <div class="input-forms">
         <div>
             <label for="email">Email</label>
-            <input type="email" id="email" formControlName="email">
+            <input type="email" id="email" formControlName="email" (keydown)="filterSpaces($event)">
         </div>
         <div>
             <label for="password">Password</label>
-            <input type="password" id="password" formControlName="password">
+            <input type="password" id="password" formControlName="password" (keydown)="filterSpaces($event)">
         </div>
     </div>
     <button>Submit</button>

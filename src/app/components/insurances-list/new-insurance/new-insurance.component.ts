@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, OnInit, output, signal } from '@angular/core';
+import { Component, DestroyRef, inject, OnDestroy, OnInit, output, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { InsurancesService } from '../../../services/insurances.service';
 import { IBranch } from '../../../models/branch.model';
@@ -17,12 +17,14 @@ import { AuthService } from '../../../services/auth.service';
   templateUrl: './new-insurance.component.html',
   styleUrl: './new-insurance.component.css'
 })
-export class NewInsuranceComponent implements OnInit {
+export class NewInsuranceComponent implements OnInit, OnDestroy {
   close = output()
 
   branches = signal<IBranch[]>([])
   insuranceTypes = signal<IType[]>([])
   submitted = signal(false);
+  isSubmitting = signal(false)
+  formIsValid = signal(false);
 
   private insuranceService = inject(InsurancesService)
   private branchesService = inject(BranchesService)
@@ -33,7 +35,7 @@ export class NewInsuranceComponent implements OnInit {
 
   form = new FormGroup({
     typeId: new FormControl('',
-       { validators: [Validators.required] }),
+      { validators: [Validators.required] }),
     amount: new FormControl('', {
       validators: [Validators.required]
     }),
@@ -53,6 +55,10 @@ export class NewInsuranceComponent implements OnInit {
     document.body.classList.add('no-scroll');
   }
 
+  ngOnDestroy(): void {
+      document.body.classList.remove('no-scroll');
+  }
+
   loadBranches() {
     const subscription = this.branchesService.getAllBranches().subscribe({
       next: (branchesData) => this.branches.set(branchesData),
@@ -61,7 +67,7 @@ export class NewInsuranceComponent implements OnInit {
           horizontalPosition: 'center',
           verticalPosition: 'top',
           duration: 3000,
-          data: {textError: error.message}
+          data: { textError: error.message }
         })
       }
     })
@@ -76,7 +82,7 @@ export class NewInsuranceComponent implements OnInit {
           horizontalPosition: 'center',
           verticalPosition: 'top',
           duration: 3000,
-          data: {textError: error.message}
+          data: { textError: error.message }
         })
       }
     })
@@ -89,12 +95,19 @@ export class NewInsuranceComponent implements OnInit {
   }
 
   get formIsInvalid() {
-    return this.form.invalid && this.submitted() && this.authService.AuthToken;
-}
+    return this.submitted() && !this.formIsValid() && this.authService.AuthToken;
+  }
 
   onSubmitted() {
+
     this.submitted.set(true);
 
+    if (this.form.controls.amount.valid && this.form.controls.branchId.valid &&
+      this.form.controls.rate.valid && this.form.controls.typeId.valid) {
+      this.formIsValid.set(true)
+    }
+
+    this.isSubmitting.set(true)
     const formData = this.form.value
     const insuranceData = {
       insuranceSum: formData.amount!,
@@ -103,20 +116,23 @@ export class NewInsuranceComponent implements OnInit {
       insuranceType: this.insuranceTypes().find(insuranceType => insuranceType._id === formData.typeId)!,
     };
 
+
     const subscription = this.insuranceService.addInsurance(insuranceData).subscribe({
       next: (createdInsurance) => {
         console.log('Insurance created successfully', createdInsurance);
         this.form.reset();
         this.close.emit();
         document.body.classList.remove('no-scroll');
+        this.isSubmitting.set(false)
       },
       error: (error: Error) => {
         this._snackBar.openFromComponent(ErrorSnackBarComponent, {
           horizontalPosition: 'center',
           verticalPosition: 'top',
           duration: 3000,
-          data: {textError: error.message}
+          data: { textError: error.message }
         })
+        this.isSubmitting.set(false)
       },
 
     })

@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, OnInit, output, signal } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { InsurancesService } from '../../services/insurances.service';
 import { InsuranceComponent } from "./insurance/insurance.component";
 import { NewInsuranceComponent } from './new-insurance/new-insurance.component';

@@ -34,7 +34,7 @@
         </div>
         <div class="actions">
             <button type="button" class="secondary_button" (click)="onCancel()">Cancel</button>
-            <button type="submit">Submit</button>
+            <button type="submit" [disabled]="isSubmitting()">Submit</button>
         </div>
         @if(formIsInvalid) {
             <p class="control-error">Enter a valid insurance data</p>

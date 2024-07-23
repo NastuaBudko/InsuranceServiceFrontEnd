@@ -1,4 +1,4 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
 import { IInsurance, IInsuranceForServer } from '../models/insurance.model';
@@ -49,7 +49,7 @@ export class InsurancesService {
 
 
   removeInsurance(insurance: IInsuranceForServer) {
-    const url = `https://insurance-service-backend.onrender.com/${insurance._id}`;
+    const url = `https://insurance-service-backend.onrender.com/insurances/${insurance._id}`;
     const token = localStorage.getItem('token');
     if (!token) {
       console.error('User is not authenticated.');

@@ -6,12 +6,12 @@
         </div>
 
         @if(authService.AuthToken) {
-        <div class="account">
-            <button routerLink="profile">
+        <div class="account" >
+            <button routerLink="profile" class="secondary_button">
                 <img class="account-icon" src="profile-icon.png" alt="Sign in">
                 <p class="account-text">My account</p>
             </button>
-            <button class="secondary_button" (click)="onSignOut()">
+            <button (click)="onSignOut()">
                 <img class="account-icon" src="log-out-icon.png" alt="Sign up">
                 <p class="account-text">Log out</p>
             </button>

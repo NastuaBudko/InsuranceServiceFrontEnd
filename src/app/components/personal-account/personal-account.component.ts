@@ -1,11 +1,11 @@
 import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { IUser } from '../../models/user.model';
-import { CapitalizePipe } from '../../capitalize.pipe';
 import { Router } from '@angular/router';
 import { ErrorSnackBarComponent } from '../error-snack-bar/error-snack-bar.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CurrencyPipe } from '@angular/common';
+import { CapitalizePipe } from '../../capitalize.pipe';
 
 @Component({
   selector: 'app-personal-account',

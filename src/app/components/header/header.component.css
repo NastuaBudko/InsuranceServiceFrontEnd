@@ -9,6 +9,8 @@ header {
     display: flex;
     align-items: center;
     max-width: 380px;
+    padding-left: 16px;
+    padding-right: 16px;
     margin: auto;
 }
 
@@ -62,8 +64,6 @@ h1 {
 @media(min-width: 556px) {
     .header-container {
         max-width: 556px;
-        padding-left: 16px;
-        padding-right: 16px;
     }
 }
 
@@ -83,15 +83,11 @@ h1 {
 
     .header-container {
         max-width: 830px;
-        padding-left: 16px;
-        padding-right: 16px;
     }
 }
 
 @media(min-width: 1112px) {
     .header-container {
         max-width: 1080px;
-        padding-left: 16px;
-        padding-right: 16px;
     }
 }
