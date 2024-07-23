@@ -76,6 +76,13 @@ export class SignUpComponent implements OnInit{
     )
   })
 
+  filterSpaces(event: KeyboardEvent) {
+    const key = event.key;
+    if (key === ' ') {
+      event.preventDefault();
+    }
+  }
+
   onSubmitted() {
     this.submitted.set(true);
 

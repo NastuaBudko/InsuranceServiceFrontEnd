@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, input, OnInit, output, signal } from '@angular/core';
+import { Component, DestroyRef, inject, input, output, signal } from '@angular/core';
 import { InsurancesService } from '../../../services/insurances.service';
 import { IInsuranceForServer } from '../../../models/insurance.model';
 import { CurrencyPipe, DatePipe } from '@angular/common';

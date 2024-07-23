@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
@@ -38,6 +38,13 @@ export class SignInComponent implements OnInit {
       this.form.touched &&
       this.form.dirty
     )
+  }
+
+  filterSpaces(event: KeyboardEvent) {
+    const key = event.key;
+    if (key === ' ') {
+      event.preventDefault();
+    }
   }
 
   onSubmitted() {
