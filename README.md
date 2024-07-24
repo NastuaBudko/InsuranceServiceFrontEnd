@@ -9,6 +9,7 @@ This project is the frontend part of the Insurance Service application. It is bu
 ## Features
 
 - User authentication (login, register)
+- Angular Material snack bar for showing errors to user
 - Managing and displaying insurance policies
 - Integration with backend APIs
 - Counting user's salary
